@@ -17,8 +17,18 @@ const Registration = () => {
     setRegistration({ ...registration, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const { firstName, lastName, email, password } = registration;
+    if (!firstName || !lastName || !email || !password) {
+      setErrorMessage("Todos los campos son obligatorios");
+      return false;
+    }
+    return true;
+  };
+
   const handleRegistration = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     try {
       const result = await registerUser(registration);
       setSuccessMessage(result);
