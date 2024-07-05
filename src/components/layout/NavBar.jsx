@@ -70,7 +70,7 @@ const NavBar = () => {
                 onClick={handleAccountClick}
               >
                 {" "}
-                Account
+                Cuenta
               </a>
 
               <ul
