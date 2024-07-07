@@ -83,6 +83,31 @@ export async function getRoomById(roomId) {
   }
 }
 
+/* This function exports all rooms to an Excel file */
+export async function exportRoomsToExcel() {
+  try {
+    const response = await api.get("/rooms/export/excel", {
+      headers: {
+        ...getHeader(),
+        Accept:
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // Tipo de contenido para Excel
+      },
+      responseType: "blob", // Indicar que la respuesta es un blob (archivo)
+    });
+
+    // Crear un enlace temporal para descargar el archivo
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "rooms.xlsx");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } catch (error) {
+    throw new Error(`Error exporting rooms to Excel: ${error.message}`);
+  }
+}
+
 /* This function saves a new booking to the databse */
 export async function bookRoom(roomId, booking) {
   try {
