@@ -11,7 +11,9 @@ import { FaEdit, FaEye, FaPlus, FaTrashAlt, FaFileExcel } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ExistingRooms = () => {
-  const [rooms, setRooms] = useState([{ id: "", roomType: "", roomPrice: "" }]);
+  const [rooms, setRooms] = useState([
+    { id: "", roomType: "FAMILIAR", roomPrice: "" },
+  ]);
   const [currentPage, setCurrentPage] = useState(1);
   const [roomsPerPage] = useState(8);
   const [isLoading, setIsLoading] = useState(false);
