@@ -128,7 +128,6 @@ const AddRoom = () => {
                   Foto de la habitación
                 </label>
                 <input
-                  required
                   name="photo"
                   id="photo"
                   type="file"
