@@ -108,7 +108,7 @@ const Profile = () => {
 											<hr />
 
 											<div className="form-group row">
-												<label className="col-md-2 col-form-label fw-bold">1er nombre:</label>
+												<label className="col-md-2 col-form-label fw-bold">Nombres:</label>
 												<div className="col-md-10">
 													<p className="card-text">{user.firstName}</p>
 												</div>
@@ -116,7 +116,7 @@ const Profile = () => {
 											<hr />
 
 											<div className="form-group row">
-												<label className="col-md-2 col-form-label fw-bold">Apellido:</label>
+												<label className="col-md-2 col-form-label fw-bold">Apellidos:</label>
 												<div className="col-md-10">
 													<p className="card-text">{user.lastName}</p>
 												</div>
